@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Killian Coffey">
+  <title>Data Analysis Feedback Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    .form-container {
+      max-width: 400px;
+      margin: auto;
+    }
+    label {
+      display: block;
+      margin: 10px 0 5px;
+    }
+    input, select, button {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .output-container {
+      margin-top: 30px;
+      padding: 15px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      background-color: #f9f9f9;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h1>Data Analysis System DAS - Feedback Form</h1>
+    <h2>Please give us your user feedback</h2>
+    <p>This will help us improve our user experience</p>
+    <form id="feedbackForm">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="age">Age:</label>
+      <input type="number" id="age" name="age" min="1" max="120" required>
+
+      <label for="gender">Gender:</label>
+      <select id="gender" name="gender" required>
+        <option value="">Select Gender</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+        <option value="Other">Other</option>
+      </select>
+
+      <label for="rating">Rating (out of 5):</label>
+      <input type="number" id="rating" name="rating" min="1" max="5" required>
+
+      <button type="button" onclick="submitFeedback()">Submit</button>
+    </form>
+  </div>
+
+  <div id="outputContainer" class="output-container" style="display: none;">
+    <h2>Feedback Summary</h2>
+    <p id="outputName"></p>
+    <p id="outputAge"></p>
+    <p id="outputGender"></p>
+    <p id="outputRating"></p>
+  </div>
+
+  <script>
+    function submitFeedback() {
+      // Get form data
+      const name = document.getElementById('name').value;
+      const age = document.getElementById('age').value;
+      const gender = document.getElementById('gender').value;
+      const rating = document.getElementById('rating').value;
+
+      // Validate inputs
+      if (!name || !age || !gender || !rating) {
+        alert('Please fill out all fields.');
+        return;
+      }
+
+      // Display feedback data
+      document.getElementById('outputName').textContent = `Name: ${name}`;
+      document.getElementById('outputAge').textContent = `Age: ${age}`;
+      document.getElementById('outputGender').textContent = `Gender: ${gender}`;
+      document.getElementById('outputRating').textContent = `Rating: ${rating} out of 5`;
+
+      // Show the output container
+      document.getElementById('outputContainer').style.display = 'block';
+
+      // Reset form fields
+      document.getElementById('feedbackForm').reset();
+    }
+  </script>
+</body>
+</html>

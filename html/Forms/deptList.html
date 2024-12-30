@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Department List</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+         <h1> Department List </h1>
+        <table border="1" cellspacing="0" cellpadding="3">
+            <tbody>
+                <tr>
+                    <th colspan='1'> Search: </th> <th  colspan='5'><select name='Dept'>
+                                <option value='Management'> Management</option>
+                                <option value='Accounts'> Accounts</option>
+                                <option value='Housekeeping'> Housekeeping</option>
+                                <option value='Information Technology'>Information Technology (IT)</option>
+                                <option value='Kitchen'> Kitchen</option>
+                            </select></th>
+                </tr>        
+                <tr>
+                    <th colspan='6'> </th>
+                </tr>
+               <tr>
+                   
+                    <td> ID</td>
+                    <td> Department Name</td>
+                    <td> Address</td>
+                    <td> Description </td>
+                    <td> </td>
+                    <td> </td>
+                </tr>
+                <tr>
+                    
+                    <td> 1 </td>
+                    <td> Kitchen </td>
+                    <td> Kuala Lumpur</td>
+                    <td> Manage all the things related to the kitchen.</td>
+                    <td> <a href="updateDept.html">Update</a></td>
+                    <td> <input type="submit" value="Delete" name="Delete" /></td>
+                </tr>
+            </tbody>
+        </table>
+         <p> </p>
+         <a href="deptAdd.html">Add New Department</a>
+         
+    </body>
+</html>

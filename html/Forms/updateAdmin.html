@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <title> Update Profile  </title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1> Edit your Details </h1>
+        <form action='adminHomePage.html' method='POST'>
+            <br>
+            <table border="0" cellpadding="4" cellspacing="4">
+                <tbody>
+                    <tr>
+                        <td>Username: </td>
+                        <td><input type='text' name='username'></td>
+                    </tr>
+                    <tr>
+                        <td>Password: </td>
+                        <td><input type='password' name='password'></td>
+                    </tr>
+                    <tr>
+                        <td>Full Name: </td>
+                        <td><input type='text' name='fullName'></td>
+                    </tr>
+                    <tr>
+                        <td>Email: </td>
+                        <td><input type='text' name='email'></td>
+                    </tr>
+                    <tr>
+                        <td>Phone Number: </td>
+                        <td><input type='text' name='phoneNum'></td>
+                    </tr>
+                    <tr>
+                        <td>Address: </td>
+                        <td><input type='text' name='address'></td>
+                    </tr>
+                    <tr>
+                        <td>Hotel Branch: </td>
+                        <td><select name='Branch'>
+                                <option value='Terengganu'> Terengganu</option>
+                                <option value='Pahang'> Pahang</option>
+                                <option value='Kuala Lumpur'> Kuala Lumpur</option>
+                                <option value='Selangor'>Selangor</option>
+                            </select></td>
+                    </tr>
+                    <tr>
+                        <td><input type ="submit" value="Update"><input type ="reset" value="Delete"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+    </body>
+</html>
