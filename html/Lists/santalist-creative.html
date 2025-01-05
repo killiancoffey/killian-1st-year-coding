@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Killian Coffey">
+  <title>santa list Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    .form-container {
+      max-width: 400px;
+      margin: auto;
+    }
+    label {
+      display: block;
+      margin: 10px 0 5px;
+    }
+    input, select, button {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .output-container {
+      margin-top: 30px;
+      padding: 15px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      background-color: #f9f9f9;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h1>Santa List</h1>
+    <h2>Please give us user Info</h2>
+    <p>This will help santa prepare the toys for you :) </p>
+    <form id="santaList">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="age">Age:</label>
+      <input type="number" id="age" name="age" min="1" max="120" required>
+
+      <label for="gender">Gender:</label>
+      <select id="gender" name="gender" required>
+        <option value="">Select Gender</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+        <option value="Other">Other</option>
+      </select>
+      
+      <h2>Please give us your list for santa, max 5. Don't be greedy !!</h2>
+      <label for="name">Toys List:</label>
+      <input type="text" id="toys" name="toys" required>
+
+      <button type="button" onclick="submitFeedback()">Deliver my List to Santa</button>
+    </form>
+  </div>
+
+  <div id="outputContainer" class="output-container" style="display: none;">
+    <h2>Feedback Summary</h2>
+    <p id="outputName"></p>
+    <p id="outputAge"></p>
+    <p id="outputGender"></p>
+  </div>
+
+  <script>
+    function submitFeedback() {
+      // Get form data
+      const name = document.getElementById('name').value;
+      const age = document.getElementById('age').value;
+      const gender = document.getElementById('gender').value;
+
+      // Validate inputs
+      if (!name || !age || !gender ) {
+        alert('Please fill out all fields.');
+        return;
+      }
+
+      // Display feedback data
+      document.getElementById('outputName').textContent = `Name: ${name}`;
+      document.getElementById('outputAge').textContent = `Age: ${age}`;
+      document.getElementById('outputGender').textContent = `Gender: ${gender}`;
+
+      // Show the output container
+      document.getElementById('outputContainer').style.display = 'block';
+
+      // Reset form fields
+      document.getElementById('santaList').reset();
+    }
+  </script>
+</body>
+</html>
